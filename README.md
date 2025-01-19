@@ -232,3 +232,127 @@ console.log(typeof greet, greet()); // "function", "Hello, World!"
 3. `typeof function() {}` returns `"function"` (functions are objects but callable).  
 
 </br></br>
+### **JavaScript Operation Conversions (Type Coercion & Explicit Conversion)** 
+
+JavaScript is a **dynamically typed** language, meaning variables can change types, and it automatically converts values in some operations. These conversions can be **implicit (coercion)** or **explicit (manual conversion).**  
+
+---
+
+## **1. Implicit Type Conversion (Type Coercion)**
+JavaScript automatically converts values when performing operations on different types.
+
+### **A. String Conversion (Concatenation)**
+When a number or boolean is combined with a string, JavaScript converts everything to a string.  
+```javascript
+console.log("5" + 2);   // "52"  (Number converted to string)
+console.log("Hello" + 5); // "Hello5"
+console.log(5 + "5" + 5); // "555" (Left to right evaluation)
+console.log("10" - 2);  // 8  (String converted to number for subtraction)
+console.log("5" * "2"); // 10 (Both strings converted to numbers)
+console.log("10" / "2"); // 5  (Both converted to numbers)
+console.log("10" - "five"); // NaN (Not a Number, since "five" is invalid)
+```
+
+---
+
+### **B. Boolean Conversion**
+- `0`, `""`, `null`, `undefined`, and `NaN` → **false**  
+- Any other value → **true**  
+
+```javascript
+console.log(Boolean(0));    // false
+console.log(Boolean(1));    // true
+console.log(Boolean(""));   // false
+console.log(Boolean("Hi")); // true
+console.log(Boolean(null)); // false
+console.log(Boolean(undefined)); // false
+console.log(Boolean([])); // true (empty array is truthy)
+console.log(Boolean({})); // true (empty object is truthy)
+```
+
+---
+
+## **2. Explicit Type Conversion (Manual Conversion)**
+
+### **A. String Conversion (`String()`, `toString()`)**
+```javascript
+let num = 100;
+console.log(String(num));  // "100"
+console.log((123).toString());  // "123"
+console.log(String(true)); // "true"
+console.log(String(null)); // "null"
+console.log(String(undefined)); // "undefined"
+```
+
+---
+
+### **B. Number Conversion (`Number()`, `parseInt()`, `parseFloat()`)**
+```javascript
+console.log(Number("123")); // 123
+console.log(Number("123abc")); // NaN (Invalid number)
+console.log(Number(true));  // 1
+console.log(Number(false)); // 0
+console.log(Number(""));    // 0
+console.log(Number(null));  // 0
+console.log(Number(undefined)); // NaN
+console.log(parseInt("50px")); // 50 (Extracts valid number)
+console.log(parseFloat("5.75kg")); // 5.75 (Extracts float)
+```
+
+---
+
+### **C. Boolean Conversion (`Boolean()`)**
+```javascript
+console.log(Boolean("false")); // true (Non-empty string is truthy)
+console.log(Boolean("0"));  // true (Non-empty string)
+console.log(Boolean(0));    // false
+console.log(Boolean(1));    // true
+console.log(Boolean([]));   // true (Empty array is truthy)
+console.log(Boolean({}));   // true (Empty object is truthy)
+```
+
+---
+
+## **3. Type Conversion in Operations**
+### **A. Arithmetic Operations**
+```javascript
+console.log(5 + "5");   // "55" (Number converted to string)
+console.log(5 - "5");   // 0   (String converted to number)
+console.log(5 * "2");   // 10  (String converted to number)
+console.log("10" / "2"); // 5  (Both strings converted to numbers)
+console.log("10" - "five"); // NaN (Invalid conversion)
+```
+
+### **B. Logical Operations**
+```javascript
+console.log("5" == 5);   // true (Type coercion, string converted to number)
+console.log("5" === 5);  // false (Strict comparison, different types)
+console.log(null == undefined); // true (Both considered "empty" values)
+console.log(null === undefined); // false (Different types)
+console.log([] == false); // true (Empty array is falsy)
+console.log([] === false); // false (Strict type check)
+```
+
+---
+
+## **4. Best Practices for Type Conversion**
+✔️ **Use `Number()`, `String()`, and `Boolean()` for explicit conversion**  
+✔️ **Avoid implicit coercion in complex operations**  
+✔️ **Use strict equality (`===`) to avoid unexpected type conversion**  
+✔️ **Use `parseInt()` and `parseFloat()` when working with numbers in strings**  
+
+---
+
+### **Final Example (All Conversions)**
+```javascript
+let x = "5";
+let y = 2;
+
+console.log(x + y);  // "52"  (String concatenation)
+console.log(Number(x) + y); // 7 (Explicit conversion)
+console.log(Boolean(x)); // true (Non-empty string is truthy)
+console.log(x == 5);  // true (Loose comparison, type coercion)
+console.log(x === 5); // false (Strict comparison, no coercion)
+```
+</br>
+</br>
