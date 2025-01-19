@@ -356,3 +356,26 @@ console.log(x === 5); // false (Strict comparison, no coercion)
 ```
 </br>
 </br>
+
+# **Store data in memory**
+### **Stack Memory**:
+- Stores **primitive types** (`number`, `string`, `boolean`, `null`, `undefined`).
+- Stores **function calls** and **local variables**.
+- **Faster** access (LIFO structure).
+- Automatically cleared when a function exits.
+
+### **Heap Memory**:
+- Stores **objects**, **arrays**, and **functions** (reference types).
+- **Slower** access (indirect access via references).
+- Managed by **Garbage Collector** (cleared when no references remain).
+
+### Example:
+```javascript
+// Stack
+let num = 10;    // Primitive in stack
+
+// Heap
+let person = { name: "Alice", age: 25 };  // Object in heap, reference in stack
+```
+</br>
+</br>
