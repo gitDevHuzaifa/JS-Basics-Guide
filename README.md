@@ -687,3 +687,158 @@ These methods provide various ways to manipulate strings in JavaScript, from sim
 
 </br>
 </br>
+
+## **JavaScript Numbers and Math Functions**  
+
+JavaScript provides a wide range of methods for working with numbers and performing mathematical operations. Below are some essential **Number** and **Math** methods with examples.
+
+---
+
+### **1. Number Basics**
+```javascript
+let num1 = 42;       // Integer
+let num2 = 3.14;     // Float (Decimal)
+let num3 = 1e3;      // Exponential (1000)
+let num4 = 0xFF;     // Hexadecimal (255)
+let num5 = 0b1010;   // Binary (10)
+let num6 = 0o52;     // Octal (42)
+
+console.log(num1, num2, num3, num4, num5, num6);
+```
+
+---
+
+### **2. Checking Type of Number**
+```javascript
+let value = 100;
+console.log(typeof value);  // "number"
+```
+
+---
+
+### **3. Converting Strings to Numbers**
+```javascript
+let str = "123.45";
+
+// Convert string to number
+console.log(Number(str));      // 123.45
+console.log(parseInt(str));    // 123
+console.log(parseFloat(str));  // 123.45
+
+// Convert number to string
+let num = 456;
+console.log(num.toString());   // "456"
+```
+
+---
+
+### **4. Rounding Numbers**
+```javascript
+let num = 3.14159;
+
+console.log(Math.round(num));   // 3 (Rounds to nearest integer)
+console.log(Math.floor(num));   // 3 (Rounds down)
+console.log(Math.ceil(num));    // 4 (Rounds up)
+console.log(Math.trunc(num));   // 3 (Removes decimal)
+```
+
+---
+
+### **5. Generating Random Numbers**
+```javascript
+console.log(Math.random());      // Random number between 0 and 1
+console.log(Math.random() * 10); // Random number between 0 and 10
+
+// Random integer between 1 and 100
+let randomInt = Math.floor(Math.random() * 100) + 1;
+console.log(randomInt);
+```
+
+---
+
+### **6. Power, Square Root, Absolute Value**
+```javascript
+console.log(Math.pow(2, 3));  // 8 (2^3)
+console.log(Math.sqrt(25));   // 5 (Square root of 25)
+console.log(Math.abs(-7));    // 7 (Absolute value)
+```
+
+---
+
+### **7. Maximum and Minimum**
+```javascript
+console.log(Math.max(5, 12, 9, 3));  // 12 (Highest value)
+console.log(Math.min(5, 12, 9, 3));  // 3 (Lowest value)
+```
+
+---
+
+### **8. Trigonometric Functions**
+```javascript
+console.log(Math.sin(Math.PI / 2));  // 1 (Sine of 90°)
+console.log(Math.cos(0));            // 1 (Cosine of 0°)
+console.log(Math.tan(Math.PI / 4));  // 1 (Tangent of 45°)
+```
+
+---
+
+### **9. Constants in Math**
+```javascript
+console.log(Math.PI);        // 3.141592653589793
+console.log(Math.E);         // 2.718281828459045 (Euler's number)
+console.log(Math.LN2);       // 0.6931471805599453 (Natural logarithm of 2)
+```
+
+---
+
+### **10. Converting Number to Fixed Decimals**
+```javascript
+let num = 5.6789;
+console.log(num.toFixed(2));   // "5.68" (Rounds to 2 decimal places)
+console.log(num.toPrecision(3)); // "5.68" (Total 3 digits)
+```
+
+---
+
+### **11. Checking if a Value is a Number**
+```javascript
+console.log(isNaN(123));       // false
+console.log(isNaN("Hello"));   // true
+console.log(isFinite(10/2));   // true
+console.log(isFinite(Infinity)); // false
+```
+
+---
+
+### **12. Exponential Notation**
+```javascript
+let num = 123456;
+console.log(num.toExponential(2));  // "1.23e+5"
+```
+
+---
+
+## **Summary**
+| Function | Description |
+|----------|-------------|
+| `Number()` | Converts to a number |
+| `parseInt()` | Converts to an integer |
+| `parseFloat()` | Converts to a floating number |
+| `Math.round()` | Rounds to the nearest integer |
+| `Math.floor()` | Rounds down |
+| `Math.ceil()` | Rounds up |
+| `Math.trunc()` | Removes decimal |
+| `Math.random()` | Generates a random number |
+| `Math.pow(x, y)` | Raises `x` to the power of `y` |
+| `Math.sqrt(x)` | Square root of `x` |
+| `Math.abs(x)` | Absolute value of `x` |
+| `Math.max(x, y, ...)` | Returns the max value |
+| `Math.min(x, y, ...)` | Returns the min value |
+| `Math.sin(x), Math.cos(x), Math.tan(x)` | Trigonometric functions |
+| `Math.PI, Math.E` | Mathematical constants |
+| `num.toFixed(n)` | Rounds to `n` decimal places |
+| `isNaN(x)` | Checks if `x` is not a number |
+| `isFinite(x)` | Checks if `x` is a finite number |
+
+</br>
+</br>
