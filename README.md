@@ -379,3 +379,311 @@ let person = { name: "Alice", age: 25 };  // Object in heap, reference in stack
 ```
 </br>
 </br>
+
+Here is a comprehensive list of all the **JavaScript String functions** with a standardized code format for each method:
+
+---
+
+### 1. **`charAt(index)`**
+Returns the character at the specified index.
+
+```javascript
+let str = 'Hello';
+let char = str.charAt(0);  // "H"
+console.log(char);
+```
+
+---
+
+### 2. **`charCodeAt(index)`**
+Returns the Unicode value of the character at the specified index.
+
+```javascript
+let str = 'Hello';
+let unicodeValue = str.charCodeAt(0);  // 72
+console.log(unicodeValue);
+```
+
+---
+
+### 3. **`concat(string2, string3, ...)`**
+Joins two or more strings together.
+
+```javascript
+let str1 = 'Hello';
+let str2 = 'World';
+let result = str1.concat(' ', str2);  // "Hello World"
+console.log(result);
+```
+
+---
+
+### 4. **`endsWith(searchString, length)`**
+Checks if the string ends with the specified substring.
+
+```javascript
+let str = 'Hello World';
+let result = str.endsWith('World');  // true
+console.log(result);
+```
+
+---
+
+### 5. **`includes(searchString, position)`**
+Checks if the string contains the specified substring.
+
+```javascript
+let str = 'Hello World';
+let result = str.includes('World');  // true
+console.log(result);
+```
+
+---
+
+### 6. **`indexOf(searchValue, fromIndex)`**
+Returns the index of the first occurrence of the specified substring.
+
+```javascript
+let str = 'Hello World';
+let index = str.indexOf('World');  // 6
+console.log(index);
+```
+
+---
+
+### 7. **`lastIndexOf(searchValue, fromIndex)`**
+Returns the index of the last occurrence of the specified substring.
+
+```javascript
+let str = 'Hello World, Hello';
+let index = str.lastIndexOf('Hello');  // 13
+console.log(index);
+```
+
+---
+
+### 8. **`localeCompare(compareString)`**
+Compares two strings in a locale-sensitive manner.
+
+```javascript
+let str1 = 'apple';
+let str2 = 'banana';
+let result = str1.localeCompare(str2);  // -1
+console.log(result);
+```
+
+---
+
+### 9. **`match(regexp)`**
+Searches for a match to the regular expression and returns an array of matches.
+
+```javascript
+let str = 'The quick brown fox';
+let result = str.match(/quick/);  // ["quick"]
+console.log(result);
+```
+
+---
+
+### 10. **`repeat(count)`**
+Returns a new string with the specified number of repetitions.
+
+```javascript
+let str = 'Hello';
+let result = str.repeat(3);  // "HelloHelloHello"
+console.log(result);
+```
+
+---
+
+### 11. **`replace(searchValue, newValue)`**
+Replaces the first occurrence of a substring with a new substring.
+
+```javascript
+let str = 'Hello World';
+let result = str.replace('World', 'JavaScript');  // "Hello JavaScript"
+console.log(result);
+```
+
+---
+
+### 12. **`search(regexp)`**
+Searches for a match to the regular expression and returns the index of the match.
+
+```javascript
+let str = 'The quick brown fox';
+let result = str.search('quick');  // 4
+console.log(result);
+```
+
+---
+
+### 13. **`slice(beginIndex, endIndex)`**
+Extracts a section of the string and returns it as a new string.
+
+```javascript
+let str = 'Hello World';
+let result = str.slice(0, 5);  // "Hello"
+console.log(result);
+```
+
+---
+
+### 14. **`split(separator, limit)`**
+Splits a string into an array of substrings based on the separator.
+
+```javascript
+let str = 'apple,banana,grape';
+let result = str.split(',');  // ["apple", "banana", "grape"]
+console.log(result);
+```
+
+---
+
+### 15. **`startsWith(searchString, position)`**
+Checks if the string starts with the specified substring.
+
+```javascript
+let str = 'Hello World';
+let result = str.startsWith('Hello');  // true
+console.log(result);
+```
+
+---
+
+### 16. **`substring(indexStart, indexEnd)`**
+Extracts characters from a string between two indexes.
+
+```javascript
+let str = 'JavaScript';
+let result = str.substring(0, 4);  // "Java"
+console.log(result);
+```
+
+---
+
+### 17. **`toLowerCase()`**
+Converts all characters in the string to lowercase.
+
+```javascript
+let str = 'Hello';
+let result = str.toLowerCase();  // "hello"
+console.log(result);
+```
+
+---
+
+### 18. **`toString()`**
+Returns the string value of an object.
+
+```javascript
+let num = 123;
+let result = num.toString();  // "123"
+console.log(result);
+```
+
+---
+
+### 19. **`toUpperCase()`**
+Converts all characters in the string to uppercase.
+
+```javascript
+let str = 'hello';
+let result = str.toUpperCase();  // "HELLO"
+console.log(result);
+```
+
+---
+
+### 20. **`trim()`**
+Removes whitespace from both ends of the string.
+
+```javascript
+let str = '  Hello World  ';
+let result = str.trim();  // "Hello World"
+console.log(result);
+```
+
+---
+
+### 21. **`trimStart()` and `trimLeft()`**
+Removes whitespace from the beginning of the string.
+
+```javascript
+let str = '  Hello World  ';
+let result = str.trimStart();  // "Hello World  "
+console.log(result);
+```
+
+---
+
+### 22. **`trimEnd()` and `trimRight()`**
+Removes whitespace from the end of the string.
+
+```javascript
+let str = '  Hello World  ';
+let result = str.trimEnd();  // "  Hello World"
+console.log(result);
+```
+
+---
+
+### 23. **`valueOf()`**
+Returns the primitive value of the string.
+
+```javascript
+let str = 'Hello';
+let result = str.valueOf();  // "Hello"
+console.log(result);
+```
+
+---
+
+### 24. **`padStart(targetLength, padString)`**
+Pads the string from the start with the specified string until it reaches the target length.
+
+```javascript
+let str = '5';
+let result = str.padStart(3, '0');  // "005"
+console.log(result);
+```
+
+---
+
+### 25. **`padEnd(targetLength, padString)`**
+Pads the string from the end with the specified string until it reaches the target length.
+
+```javascript
+let str = '5';
+let result = str.padEnd(3, '0');  // "500"
+console.log(result);
+```
+
+---
+
+### 26. **`fromCharCode()`** (Static Method)
+Returns a string created from the specified sequence of Unicode values.
+
+```javascript
+let result = String.fromCharCode(72, 101, 108, 108, 111);  // "Hello"
+console.log(result);
+```
+
+---
+
+### 27. **`fromCodePoint()`** (Static Method)
+Returns a string created from a sequence of Unicode code points.
+
+```javascript
+let result = String.fromCodePoint(0x1F600);  // "😀"
+console.log(result);
+```
+
+---
+
+### Conclusion
+
+These methods provide various ways to manipulate strings in JavaScript, from simple tasks like trimming or replacing characters, to more advanced operations like working with Unicode characters. Each function has its own unique use case, making JavaScript strings highly flexible and powerful.
+
+</br>
+</br>
