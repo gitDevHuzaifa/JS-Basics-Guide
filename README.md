@@ -1000,4 +1000,178 @@ console.log(`Difference: ${days} days`);
 
 </br>
 </br>
+# **JavaScript Arrays**
 
+## **What is an Array?**
+An **array** in JavaScript is a data structure that allows you to store multiple values in a single variable. It can hold **different types of data**, including numbers, strings, objects, and even other arrays.
+
+### **Creating an Array**
+You can create an array using:
+```javascript
+const numbers = [1, 2, 3, 4, 5]; // Using square brackets (recommended)
+const fruits = new Array("Apple", "Banana", "Orange"); // Using the Array constructor
+```
+
+---
+
+## **Accessing Array Elements**
+Each element in an array has an **index**, starting from **0**.
+
+```javascript
+const colors = ["Red", "Green", "Blue"];
+
+console.log(colors[0]); // Red
+console.log(colors[1]); // Green
+console.log(colors[2]); // Blue
+```
+
+---
+
+## **Array Properties**
+| Property        | Description |
+|----------------|-------------|
+| `length`       | Returns the number of elements in the array. |
+| `indexOf()`    | Returns the index of an element (or `-1` if not found). |
+| `includes()`   | Checks if an element exists in the array (returns `true` or `false`). |
+
+### **Examples:**
+```javascript
+const cities = ["New York", "London", "Tokyo"];
+
+console.log(cities.length); // 3
+console.log(cities.indexOf("London")); // 1
+console.log(cities.includes("Paris")); // false
+```
+
+---
+
+## **Modifying Arrays**
+### **Adding and Removing Elements**
+| Method         | Description |
+|---------------|-------------|
+| `push(value)` | Adds an element at the **end** of the array. |
+| `pop()`       | Removes the **last** element from the array. |
+| `unshift(value)` | Adds an element at the **beginning** of the array. |
+| `shift()`     | Removes the **first** element from the array. |
+
+### **Examples:**
+```javascript
+const numbers = [1, 2, 3, 4];
+
+numbers.push(5);  // [1, 2, 3, 4, 5]
+numbers.pop();    // [1, 2, 3, 4]
+numbers.unshift(0); // [0, 1, 2, 3, 4]
+numbers.shift();  // [1, 2, 3, 4]
+```
+
+---
+
+## **Array Iteration Methods**
+JavaScript provides several methods to loop through arrays.
+
+### **`forEach()` – Iterates through each element**
+```javascript
+const numbers = [1, 2, 3];
+
+numbers.forEach((num) => {
+    console.log(num * 2);
+});
+```
+
+### **`map()` – Returns a new array**
+```javascript
+const doubled = numbers.map(num => num * 2);
+console.log(doubled); // [2, 4, 6]
+```
+
+### **`filter()` – Filters elements based on a condition**
+```javascript
+const evenNumbers = numbers.filter(num => num % 2 === 0);
+console.log(evenNumbers); // [2]
+```
+
+### **`reduce()` – Reduces an array to a single value**
+```javascript
+const sum = numbers.reduce((total, num) => total + num, 0);
+console.log(sum); // 6
+```
+
+---
+
+## **Slice vs Splice**
+| Method        | Description |
+|--------------|-------------|
+| `slice(start, end)` | Extracts part of an array without modifying the original array. |
+| `splice(start, deleteCount, ...items)` | Removes or replaces elements in an array. |
+
+### **Example:**
+```javascript
+const arr = [1, 2, 3, 4, 5];
+
+console.log(arr.slice(1, 4)); // [2, 3, 4] (original array remains unchanged)
+
+console.log(arr.splice(1, 2)); // [2, 3] (removes these elements)
+console.log(arr); // [1, 4, 5] (original array is modified)
+```
+
+---
+
+## **Combining and Flattening Arrays**
+| Method        | Description |
+|--------------|-------------|
+| `concat()`   | Combines multiple arrays into one. |
+| `flat(depth)` | Flattens nested arrays up to the specified depth. |
+
+### **Example:**
+```javascript
+const arr1 = [1, 2];
+const arr2 = [3, 4];
+
+console.log(arr1.concat(arr2)); // [1, 2, 3, 4]
+
+const nestedArr = [1, [2, [3, 4]], 5];
+console.log(nestedArr.flat(2)); // [1, 2, 3, 4, 5]
+```
+
+---
+
+## **Sorting and Reversing**
+| Method        | Description |
+|--------------|-------------|
+| `sort()`     | Sorts the array alphabetically or numerically. |
+| `reverse()`  | Reverses the order of elements in an array. |
+
+### **Example:**
+```javascript
+const numbers = [3, 1, 4, 2];
+
+numbers.sort((a, b) => a - b); // [1, 2, 3, 4] (ascending order)
+numbers.reverse(); // [4, 3, 2, 1] (reverse order)
+```
+
+---
+
+## **Converting Arrays to Strings**
+| Method        | Description |
+|--------------|-------------|
+| `join(separator)` | Converts the array into a string with a separator. |
+| `toString()` | Converts the array to a comma-separated string. |
+
+### **Example:**
+```javascript
+const fruits = ["Apple", "Banana", "Orange"];
+
+console.log(fruits.join(" - ")); // "Apple - Banana - Orange"
+console.log(fruits.toString()); // "Apple,Banana,Orange"
+```
+
+---
+
+## **Checking if a Variable is an Array**
+Use `Array.isArray()` to check if a variable is an array.
+```javascript
+console.log(Array.isArray([1, 2, 3])); // true
+console.log(Array.isArray("Hello")); // false
+```
+
+---
