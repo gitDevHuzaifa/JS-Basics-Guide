@@ -2,7 +2,7 @@
 A beginner-friendly repository covering JavaScript basics, including variables, data types, operators, functions, and arrays, with simple examples for easy understanding.
 
 
-### **JavaScript Variables - Complete Guide** 🚀  
+### **JavaScript Variables - Complete Guide**    
 
 A **variable** is used to store data in memory. In JavaScript, variables can hold different types of data (numbers, strings, objects, etc.).  
 
@@ -28,15 +28,15 @@ const z = 30;  // Cannot be changed
 | Feature     | `var`  | `let`  | `const`  |
 |------------|--------|--------|---------|
 | **Scope**  | Function-scoped | Block-scoped | Block-scoped |
-| **Reassignable?** | ✅ Yes | ✅ Yes | ❌ No |
-| **Hoisting?** | ✅ Yes (initialized as `undefined`) | ✅ Yes (but not initialized) | ✅ Yes (but not initialized) |
-| **Can be declared again?** | ✅ Yes | ❌ No | ❌ No |
+| **Reassignable?** |   Yes |   Yes | ❌ No |
+| **Hoisting?** |   Yes (initialized as `undefined`) |   Yes (but not initialized) |   Yes (but not initialized) |
+| **Can be declared again?** |   Yes | ❌ No | ❌ No |
 
 ---
 
 ## **3. Variable Naming Rules**
-✅ Must **start** with a letter, `_`, or `$`  
-✅ Can contain **letters, numbers, `_`, `$`**  
+  Must **start** with a letter, `_`, or `$`  
+  Can contain **letters, numbers, `_`, `$`**  
 ❌ Cannot use **reserved words** (`var`, `let`, `const`, etc.)  
 ❌ Cannot start with a **number**  
 
@@ -62,7 +62,7 @@ A variable declared outside any function is **global** and accessible anywhere.
 let globalVar = "I am global";
 
 function test() {
-  console.log(globalVar); // ✅ Accessible
+  console.log(globalVar); //   Accessible
 }
 test();
 ```
@@ -81,7 +81,7 @@ console.log(localVar); // ❌ Error: Not accessible outside the function
 ```javascript
 if (true) {
   let blockVar = "Inside block";
-  console.log(blockVar); // ✅ Works inside block
+  console.log(blockVar); //   Works inside block
 }
 console.log(blockVar); // ❌ Error: Not defined outside block
 ```
@@ -111,10 +111,10 @@ const pi = 3.14;
 pi = 3.14159; // ❌ Error: Cannot reassign a constant
 ```
 
-✅ But objects inside `const` can be modified:  
+  But objects inside `const` can be modified:  
 ```javascript
 const user = { name: "Alice" };
-user.name = "Bob";  // ✅ Allowed
+user.name = "Bob";  //   Allowed
 console.log(user.name); // "Bob"
 ```
 
@@ -838,3 +838,166 @@ console.log(num.toExponential(2));  // "1.23e+5"
 
 </br>
 </br>
+
+##  **JavaScript `Date` Object**  
+
+The **`Date`** object in JavaScript is used to **work with dates and times**. It allows you to **get, set, and manipulate dates**, including the current date and time.  
+
+---
+
+## **1️ Creating a Date Object**
+JavaScript provides multiple ways to create a `Date` object:  
+
+###   **Create Current Date & Time**
+```javascript
+const now = new Date();
+console.log(now); // Outputs current date & time
+```
+
+###   **Create a Specific Date**
+```javascript
+const customDate = new Date(2025, 0, 15); // Year, Month (0-based), Day
+console.log(customDate); // Output: Wed Jan 15 2025
+```
+- **Months start from `0`** (0 = January, 11 = December).  
+
+###   **Using a Date String**
+```javascript
+const dateFromString = new Date("2025-06-10T10:30:00");
+console.log(dateFromString);
+```
+
+###   **Using Timestamp (Milliseconds)**
+```javascript
+const dateFromTimestamp = new Date(1672531199000);
+console.log(dateFromTimestamp);
+```
+
+---
+
+## **2️ Getting Date & Time Components**
+JavaScript provides methods to extract parts of a date:
+
+| **Method** | **Description** | **Example Output** |
+|------------|---------------|------------------|
+| `getFullYear()` | Returns the year | `2025` |
+| `getMonth()` | Returns month (0-11) | `0` (January) |
+| `getDate()` | Returns day of the month (1-31) | `15` |
+| `getDay()` | Returns day of the week (0-6, Sunday=0) | `3` (Wednesday) |
+| `getHours()` | Returns hours (0-23) | `10` |
+| `getMinutes()` | Returns minutes (0-59) | `30` |
+| `getSeconds()` | Returns seconds (0-59) | `45` |
+| `getMilliseconds()` | Returns milliseconds (0-999) | `250` |
+
+###   **Example Usage**
+```javascript
+const now = new Date();
+console.log(now.getFullYear()); // 2025
+console.log(now.getMonth());    // 0 (January)
+console.log(now.getDate());     // 15
+console.log(now.getHours());    // Current hour
+console.log(now.getDay());      // Day of the week (0-6)
+```
+
+---
+
+## **3️ Formatting Dates (`toLocaleDateString()`)**
+JavaScript allows formatting dates in different ways:
+
+###   **Default Formatting**
+```javascript
+const now = new Date();
+console.log(now.toLocaleDateString()); // Example: "1/15/2025"
+```
+
+###   **Custom Formatting**
+```javascript
+const now = new Date();
+console.log(now.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' }));
+// Output: "Wednesday, January 15, 2025"
+```
+
+---
+
+## **4️ Modifying Date (`set` Methods)**
+You can **change** a specific part of a date:
+
+###   **Set a New Year**
+```javascript
+const now = new Date();
+now.setFullYear(2030);
+console.log(now);
+```
+
+###   **Set a New Month**
+```javascript
+now.setMonth(11); // December
+console.log(now);
+```
+
+###   **Set a New Date**
+```javascript
+now.setDate(25);
+console.log(now);
+```
+
+---
+
+## **5️ Getting Timestamps**
+A **timestamp** is the number of **milliseconds** since January 1, 1970 (Unix Epoch).
+
+###   **Get Current Timestamp**
+```javascript
+console.log(Date.now()); // Example: 1705678901234 (milliseconds)
+```
+
+###   **Convert Date to Timestamp**
+```javascript
+const now = new Date();
+console.log(now.getTime()); // Returns timestamp
+```
+
+---
+
+## **6️ Calculating Date Differences**
+You can calculate the difference between two dates:
+
+###   **Find Age from Birth Year**
+```javascript
+const birthDate = new Date("2000-01-01");
+const today = new Date();
+const age = today.getFullYear() - birthDate.getFullYear();
+console.log(`Age: ${age} years`);
+```
+
+###   **Find Days Between Two Dates**
+```javascript
+const date1 = new Date("2025-01-01");
+const date2 = new Date("2025-12-31");
+
+const difference = date2 - date1; // Difference in milliseconds
+const days = difference / (1000 * 60 * 60 * 24); // Convert to days
+
+console.log(`Difference: ${days} days`);
+```
+
+---
+
+## ** Summary**
+| **Feature** | **Method** |
+|------------|------------|
+| Get Current Date & Time | `new Date()` |
+| Get Year | `getFullYear()` |
+| Get Month | `getMonth()` (0-11) |
+| Get Day of Month | `getDate()` |
+| Get Day of Week | `getDay()` (0-6) |
+| Get Hours/Minutes/Seconds | `getHours()`, `getMinutes()`, `getSeconds()` |
+| Convert to Local String | `toLocaleDateString()` |
+| Get Timestamp | `Date.now()` |
+| Calculate Date Difference | Subtract two dates |
+
+---
+
+</br>
+</br>
+
