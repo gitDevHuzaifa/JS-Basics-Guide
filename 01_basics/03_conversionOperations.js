@@ -47,3 +47,31 @@ let test = Number("5555");
 
 // console.log( Number(test));
 console.log(typeof test);
+
+
+// *********************************  Operations *************************************
+
+// Variables
+let a = 10, b = 5, x = true, y = false, num = 10;
+
+// Arithmetic Operations
+console.log(a + b, a - b, a * b, a / b, a % b, a ** b);
+
+// Comparison Operations
+console.log(a > b, a < b, a >= b, a <= b, a == b, a === b, a != b, a !== b);
+
+// Logical Operations
+console.log(x && y, x || y, !x);
+
+// Bitwise Operations
+console.log(a & b, a | b, a ^ b, ~a, a << 1, a >> 1);
+
+// Assignment Operations
+num += 5; num -= 2; num *= 3; num /= 2; num %= 3; num **= 2;
+console.log(num);
+
+// Ternary Operator
+console.log((a > b) ? "A is greater" : "B is greater");
+
+console.log(a === b);
+console.log(typeof a, typeof b);
