@@ -845,7 +845,7 @@ The **`Date`** object in JavaScript is used to **work with dates and times**. It
 
 ---
 
-## **1️ Creating a Date Object**
+## **1 Creating a Date Object**
 JavaScript provides multiple ways to create a `Date` object:  
 
 ###   **Create Current Date & Time**
@@ -875,7 +875,11 @@ console.log(dateFromTimestamp);
 
 ---
 
+<<<<<<< HEAD
 ## **2️Getting Date & Time Components**
+=======
+## **2 Getting Date & Time Components**
+>>>>>>> ecc105e8effbd31d4967dc898bd55b308ee82612
 JavaScript provides methods to extract parts of a date:
 
 | **Method** | **Description** | **Example Output** |
@@ -901,7 +905,7 @@ console.log(now.getDay());      // Day of the week (0-6)
 
 ---
 
-## **3️ Formatting Dates (`toLocaleDateString()`)**
+## **3 Formatting Dates (`toLocaleDateString()`)**
 JavaScript allows formatting dates in different ways:
 
 ###   **Default Formatting**
@@ -919,7 +923,7 @@ console.log(now.toLocaleDateString('en-US', { weekday: 'long', year: 'numeric', 
 
 ---
 
-## **4️ Modifying Date (`set` Methods)**
+## **4 Modifying Date (`set` Methods)**
 You can **change** a specific part of a date:
 
 ###   **Set a New Year**
@@ -943,7 +947,7 @@ console.log(now);
 
 ---
 
-## **5️ Getting Timestamps**
+## **5 Getting Timestamps**
 A **timestamp** is the number of **milliseconds** since January 1, 1970 (Unix Epoch).
 
 ###   **Get Current Timestamp**
@@ -959,7 +963,7 @@ console.log(now.getTime()); // Returns timestamp
 
 ---
 
-## **6️ Calculating Date Differences**
+## **6 Calculating Date Differences**
 You can calculate the difference between two dates:
 
 ###   **Find Age from Birth Year**
