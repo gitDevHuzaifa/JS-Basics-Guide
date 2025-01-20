@@ -28,17 +28,17 @@ const z = 30;  // Cannot be changed
 | Feature     | `var`  | `let`  | `const`  |
 |------------|--------|--------|---------|
 | **Scope**  | Function-scoped | Block-scoped | Block-scoped |
-| **Reassignable?** |   Yes |   Yes | ❌ No |
+| **Reassignable?** |   Yes |   Yes |  No |
 | **Hoisting?** |   Yes (initialized as `undefined`) |   Yes (but not initialized) |   Yes (but not initialized) |
-| **Can be declared again?** |   Yes | ❌ No | ❌ No |
+| **Can be declared again?** |   Yes |  No |  No |
 
 ---
 
 ## **3. Variable Naming Rules**
   Must **start** with a letter, `_`, or `$`  
   Can contain **letters, numbers, `_`, `$`**  
-❌ Cannot use **reserved words** (`var`, `let`, `const`, etc.)  
-❌ Cannot start with a **number**  
+ Cannot use **reserved words** (`var`, `let`, `const`, etc.)  
+ Cannot start with a **number**  
 
 ### **Valid Examples:**
 ```javascript
@@ -49,8 +49,8 @@ let $price = 50;
 
 ### **Invalid Examples:**
 ```javascript
-let 1name = "Error"; // ❌ Cannot start with a number
-let let = 5;         // ❌ Cannot use reserved words
+let 1name = "Error"; //  Cannot start with a number
+let let = 5;         //  Cannot use reserved words
 ```
 
 ---
@@ -73,7 +73,7 @@ Variables declared with `var` are **function-scoped**.
 function example() {
   var localVar = "I exist only inside this function";
 }
-console.log(localVar); // ❌ Error: Not accessible outside the function
+console.log(localVar); //  Error: Not accessible outside the function
 ```
 
 ### **C. Block Scope (`let` & `const`)**
@@ -83,7 +83,7 @@ if (true) {
   let blockVar = "Inside block";
   console.log(blockVar); //   Works inside block
 }
-console.log(blockVar); // ❌ Error: Not defined outside block
+console.log(blockVar); //  Error: Not defined outside block
 ```
 
 ---
@@ -93,10 +93,10 @@ console.log(blockVar); // ❌ Error: Not defined outside block
 - **`let` and `const` are hoisted but NOT initialized (Temporal Dead Zone - TDZ)**
 
 ```javascript
-console.log(a); // ❌ Undefined (Hoisted)
+console.log(a); //  Undefined (Hoisted)
 var a = 5;
 
-console.log(b); // ❌ ReferenceError (TDZ)
+console.log(b); //  ReferenceError (TDZ)
 let b = 10;
 ```
 
@@ -108,7 +108,7 @@ let b = 10;
 
 ```javascript
 const pi = 3.14;
-pi = 3.14159; // ❌ Error: Cannot reassign a constant
+pi = 3.14159; //  Error: Cannot reassign a constant
 ```
 
   But objects inside `const` can be modified:  
@@ -131,10 +131,10 @@ console.log(`Hello, my name is ${name} and I am ${age} years old.`);
 ---
 
 ### **Summary**
-✔️ **Use `let` for variables that change.**  
-✔️ **Use `const` for fixed values.**  
-✔️ **Avoid `var` (due to function scope & hoisting issues).**  
-✔️ **Always use meaningful names.**  
+ **Use `let` for variables that change.**  
+ **Use `const` for fixed values.**  
+ **Avoid `var` (due to function scope & hoisting issues).**  
+ **Always use meaningful names.**  
 </br></br>
 
 
@@ -336,10 +336,10 @@ console.log([] === false); // false (Strict type check)
 ---
 
 ## **4. Best Practices for Type Conversion**
-✔️ **Use `Number()`, `String()`, and `Boolean()` for explicit conversion**  
-✔️ **Avoid implicit coercion in complex operations**  
-✔️ **Use strict equality (`===`) to avoid unexpected type conversion**  
-✔️ **Use `parseInt()` and `parseFloat()` when working with numbers in strings**  
+ **Use `Number()`, `String()`, and `Boolean()` for explicit conversion**  
+ **Avoid implicit coercion in complex operations**  
+ **Use strict equality (`===`) to avoid unexpected type conversion**  
+ **Use `parseInt()` and `parseFloat()` when working with numbers in strings**  
 
 ---
 
