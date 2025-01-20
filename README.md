@@ -1000,6 +1000,7 @@ console.log(`Difference: ${days} days`);
 
 </br>
 </br>
+
 # **JavaScript Arrays**
 
 ## **What is an Array?**
