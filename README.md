@@ -875,9 +875,6 @@ console.log(dateFromTimestamp);
 
 ---
 
-<<<<<<< HEAD
-## **2️Getting Date & Time Components**
-=======
 ## **2 Getting Date & Time Components**
 >>>>>>> ecc105e8effbd31d4967dc898bd55b308ee82612
 JavaScript provides methods to extract parts of a date:
